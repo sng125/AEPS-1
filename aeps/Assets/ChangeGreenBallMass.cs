@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-//using TMPro;
+using TMPro;
 
 public class ChangeGreenBallMass : MonoBehaviour
 {
@@ -26,13 +26,13 @@ public class ChangeGreenBallMass : MonoBehaviour
     public void ChangeMass()
     {
         Slider mySlider = GameObject.Find("GreenBallMassSlider").GetComponent<Slider>();
-        float mySliderVal = mySlider.value * 10;
+        float mySliderVal = mySlider.value * 100;
         mass = mySliderVal;
 
         Debug.Log(mass);
 
         //Change mass display
-        //GameObject.Find("GreenBallMassLabel").GetComponent<TMPro.TextMeshProUGUI>().text = "Blue Ball Mass: " + mass;
+        GameObject.Find("GreenBallMassLabel").GetComponent<TMPro.TextMeshProUGUI>().text = "Green Ball Mass: " + System.Math.Round(mass,2) + " kg";
 
     }
     public void UpdateMassLabel()
