@@ -6,6 +6,8 @@ public class RunButton : MonoBehaviour
 {
     public void WhenPressed()
     {
-        Physics2D.gravity = new Vector2(0, -10);
+        GameObject.Find("GreenCircle").GetComponent<Rigidbody2D>().gravityScale = 1;
+        GameObject.Find("BlueCircle").GetComponent<Rigidbody2D>().gravityScale = 1;
+        //Physics2D.gravity = new Vector2(0, -10);
     }
 }

@@ -19,14 +19,13 @@ public class ChangeGreenBallMass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //GetComponent<Rigidbody>().mass = scale;
-        //mass = GetComponent<Rigidbody>().mass;
+
     }
 
     public void ChangeMass()
     {
         Slider mySlider = GameObject.Find("GreenBallMassSlider").GetComponent<Slider>();
-        float mySliderVal = mySlider.value * 100;
+        float mySliderVal = mySlider.value * 10;
         mass = mySliderVal;
 
         Debug.Log(mass);
@@ -34,10 +33,23 @@ public class ChangeGreenBallMass : MonoBehaviour
         //Change mass display
         GameObject.Find("GreenBallMassLabel").GetComponent<TMPro.TextMeshProUGUI>().text = "Green Ball Mass: " + System.Math.Round(mass,2) + " kg";
 
+        //Change Ball mass
+        GameObject.Find("GreenCircle").GetComponent<Rigidbody2D>().mass = mass;
+
+        //change air resistance based on mass if air resistance is on
+        if (GameObject.Find("AirResistanceToggle").GetComponent<Toggle>().isOn)
+        {
+            float mass = GameObject.Find("GreenCircle").GetComponent<Rigidbody2D>().mass;
+            GameObject.Find("GreenCircle").GetComponent<Rigidbody2D>().drag = 2.5f / (mass);
+
+            //cap drag at 1
+            if (GameObject.Find("GreenCircle").GetComponent<Rigidbody2D>().drag >= 1)
+            {
+                GameObject.Find("GreenCircle").GetComponent<Rigidbody2D>().drag = 1;
+            }
+
+            GameObject.Find("BlueCircle").GetComponent<Rigidbody2D>().drag = 0.5f;
+        }
     }
-    public void UpdateMassLabel()
-    {
-        SpriteRenderer renderer = GameObject.Find("Background").GetComponent<SpriteRenderer>();
-        //renderer.sprite = 
-    }
+
 }

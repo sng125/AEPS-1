@@ -7,7 +7,8 @@ public class OnStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Physics2D.gravity = new Vector2(0, 0);
+        GameObject.Find("GreenCircle").GetComponent<Rigidbody2D>().gravityScale = 0;
+        GameObject.Find("BlueCircle").GetComponent<Rigidbody2D>().gravityScale = 0;
     }
 
     // Update is called once per frame
