@@ -9,6 +9,10 @@ public class ChangeAirResistance : MonoBehaviour
     {
         if (GameObject.Find("AirResistanceToggle").GetComponent<Toggle>().isOn)
         {
+            //change background to sky
+            //Sprite newSprite ;
+            //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = newSprite;
+
             float mass = GameObject.Find("GreenCircle").GetComponent<Rigidbody2D>().mass;
             GameObject.Find("GreenCircle").GetComponent<Rigidbody2D>().drag = 2.5f / (mass);
 
