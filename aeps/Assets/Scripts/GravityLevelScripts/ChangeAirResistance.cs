@@ -7,11 +7,11 @@ public class ChangeAirResistance : MonoBehaviour
 {
     public void ChangeBallDrag()
     {
-        if (GameObject.Find("AirResistanceToggle").GetComponent<Toggle>().isOn)
+        Toggle t = GameObject.Find("AirResistanceToggle").GetComponent<Toggle>();
+        if (t.isOn)
         {
-            //change background to sky
-            //Sprite newSprite ;
-            //GameObject.Find("Background").GetComponent<SpriteRenderer>().sprite = newSprite;
+            //change label
+            t.GetComponentInChildren<Text>().text = "Air Resistance On";
 
             float mass = GameObject.Find("GreenCircle").GetComponent<Rigidbody2D>().mass;
             GameObject.Find("GreenCircle").GetComponent<Rigidbody2D>().drag = 2.5f / (mass);
@@ -26,6 +26,7 @@ public class ChangeAirResistance : MonoBehaviour
         }
         else
         {
+            t.GetComponentInChildren<Text>().text = "Air Resistance Off";
             GameObject.Find("GreenCircle").GetComponent<Rigidbody2D>().drag = 0;
             GameObject.Find("BlueCircle").GetComponent<Rigidbody2D>().drag = 0;
         }

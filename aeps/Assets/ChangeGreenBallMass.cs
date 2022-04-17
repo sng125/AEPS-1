@@ -27,6 +27,10 @@ public class ChangeGreenBallMass : MonoBehaviour
         Slider mySlider = GameObject.Find("GreenBallMassSlider").GetComponent<Slider>();
         float mySliderVal = mySlider.value * 10;
         mass = mySliderVal;
+        if (mass <= 0.09)
+        {
+            mass = 0.1f;
+        }
 
         Debug.Log(mass);
 
