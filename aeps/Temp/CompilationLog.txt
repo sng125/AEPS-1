@@ -1,6 +1,0 @@
-# Starting compiling Scripts.dll
-C:\Program Files\Unity\Hub\Editor\2020.3.29f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-d844037100c97b74a9b1ceebe4b7a5df
-# Starting compiling Assembly-CSharp.dll
-C:\Program Files\Unity\Hub\Editor\2020.3.29f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-30ef750f5ce509e4097417b75d54f9ac
-# Starting compiling PlayMode.dll
-C:\Program Files\Unity\Hub\Editor\2020.3.29f1\Editor\Data\Tools\RoslynScripts\unity_csc.bat /noconfig @Temp/UnityTempFile-c50034f1cdd32a741a5c95d787749006
