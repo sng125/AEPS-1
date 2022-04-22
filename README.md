@@ -1,2 +1,2 @@
 # AEPS
-Go to Builds -> aeps.exe to run the program
+Go to Assets -> Builds -> aeps.exe to run the program
