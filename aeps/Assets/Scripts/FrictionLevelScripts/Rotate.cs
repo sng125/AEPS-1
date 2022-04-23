@@ -20,18 +20,20 @@ public class Rotate : MonoBehaviour
         }
     }
 
+    //If mouse is hovering over object collider
     void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1)) //If right mouse button clicks, rotate
         {
             rotate = true;
         }
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1)) //If right mouse button releases, stop rotating
         {
             rotate = false;
         }
     }
 
+    // If mouse button exits collider area, always stop rotating
     void OnMouseExit()
     {
         rotate = false;
